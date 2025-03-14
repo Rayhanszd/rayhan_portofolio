@@ -1,0 +1,114 @@
+/* Gaya untuk bagian layanan SERVICE*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0F172A;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #0A1220;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #E63946;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
+        }
+        
+        /* Efek Hover dan Active */
+        nav ul li a.active,
+        nav ul li a:hover {
+            background-color: #1abc9c;
+            border-radius: 5px;
+        }
+
+#services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #0F172A;
+}
+
+#services h2 {
+    font-size: 36px;
+    color: #E63946;
+    margin-bottom: 20px;
+}
+
+/* Grid untuk layanan */
+.service-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Kotak layanan */
+.service {
+    background: #1e2a47;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Ikon layanan */
+.service::before {
+    content: "💻"; /* Ganti dengan ikon sesuai layanan */
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Judul layanan */
+.service h3 {
+    font-size: 22px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Deskripsi layanan */
+.service p {
+    font-size: 16px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 40px;
+}

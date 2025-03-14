@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0F172A;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #0A1220;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #E63946;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
+        }
+        
+        /* Efek Hover dan Active */
+        nav ul li a.active,
+        nav ul li a:hover {
+            background-color: #1abc9c;
+            border-radius: 5px;
+        }
+
+        /*Show More*/
+        a {
+            color: #ffffff; /* Ganti warna sesuai keinginan */
+            text-decoration: none; /* Hilangkan garis bawah */
+            font-weight: bold;
+        }
+        
+        a:visited {
+            color: #ffffff; /* Paksa warna tetap sama walau sudah dikunjungi */
+        }
+        
+        /* Membalik posisi gambar dan teks */
+        .hero {
+            display: flex;
+            flex-direction: row-reverse; 
+            justify-content: space-between;
+            align-items: center;
+            height: 90vh;
+            padding: 0 10%;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            text-align: left; /* Rata kiri */
+            margin-right: auto;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #A8A8A8;
+            margin: 20px 0;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #E63946;
+            font-size: 20px;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        /* Tambahkan lingkaran di belakang foto */
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.1); /* Warna transparan */
+            border-radius: 50%;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        /*untuk foto saya*/
+        .hero img {
+            width: 616px;
+            border-radius: 10px;
+            margin-left: 500; /*geser  */
+            margin-top: -490px; /* Geser ke atas */
+            z-index: 1;
+        }
+
+        img.profile-photo {
+            filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.5));
+            transition: filter 0.3s ease-in-out;
+        }
+    
+        footer {
+            background-color: #0A1220;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        
+        /*Bagian Detail Project*/
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .project-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .project {
+            background: #0A1220;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+
+        /*Icon Sosmed*/
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+            margin-right: 480px;
+        }
+        
+        .social-icons a {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        
+        .social-icons a {
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .social-icons a:nth-child(1) { color: #25D366; } /* WhatsApp */
+        .social-icons a:nth-child(2) { color: #E4405F; } /* Instagram */
+        .social-icons a:nth-child(3) { color: #0088CC; } /* Telegram */
+        .social-icons a:nth-child(4) { color: #00C300; } /* Line */
+        .social-icons a:nth-child(5) { color: #0088CC; } /* Linkedin */
+
+        .social-icons a:hover {
+            color: #ffffff; 
+        }
+        
+        /* Licenses & Certifications Gaya untuk Modal */
+        .modal {
+            display: none; /* Awalnya tersembunyi */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap */
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            color: #333;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Styling untuk gambar di dalam modal */
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Project Section Styles */
+        #projects {
+            padding: 50px 5%;  /*untuk mengatur jarak antara kolom lisensi*/
+            background-color: #0F172A;
+            color: white;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 32px;
+            color: #E63946;
+            margin-bottom: 40px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .project {  /*bagian kolom*/
+            background-color: #1e2a47;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .project h3 {
+            color: #E63946;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #A8A8A8;
+        }
+
+        .btn-open-modal {
+            background-color: #E63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-open-modal:hover {
+            background-color: #D1323A;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Overlay */
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            color: #333;
+            text-align: left;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project {
+                width: 100%;
+                margin: 0 10px 20px;
+            }
+
+            #projects {
+                padding: 40px 5%;
+            }
+
+            .project-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+        
+        /*bagian project*/
+
+        #portfolio {
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            background-color: #0F172A;
+        }
+        
+        .portfolio-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #1e2a47;
+            width: 85%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-slider {
+            width: 650px; /* Sesuaikan ukuran yang diinginkan */
+        }
+        
+        .slide {
+            width: 100%;
+            height: auto;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .indicators {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: red;
+        }
+        
+        .portfolio-details {
+            text-align: left;
+            max-width: 800px;
+        }
+        
+        .btn-show-more {
+            margin-top: 10px;
+            background-color: #E63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .btn-show-more:hover {
+            background-color: #C62828;
+        }
+        
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .portfolio-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .portfolio-item img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Image Slider in Modal */
+        .image-slider-modal {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides-modal {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .slide-modal {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slide-modal.active {
+            display: block;
+        }
+
+        /* Navigation Dots */
+        .indicators-modal {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot-modal {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot-modal.active {
+            background-color: red;
+        }
+
+
+
+        
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .service-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        
+        /* Modal Styling */
+
+
+        /* Animasi muncul WELCOME*/
+
+        .modal-welcome {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-contentwelcome {
+            background: #1e2a47;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #E63946;
+        }
+
+        #closeModal {
+            background-color: #E63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #closeModal:hover {
+            background-color: #D1323A;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*UNTUK TAMPILAN HP*/
+@media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav ul {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        .hero {
+            flex-direction: column-reverse; /* Foto di bawah, teks di atas */
+            text-align: center;
+            height: auto;
+            padding: 20px;
+        }
+
+        .hero img {
+            width: 80%; /* Gambar lebih kecil */
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 32px; /* Ukuran font lebih kecil */
+        }
+
+        .hero-text p {
+            font-size: 16px;
+        }
+
+        .project-list {
+            flex-direction: column;
+        }
+
+        .project {
+            width: 90%;
+            margin: 10px auto;
+        }
+    }
